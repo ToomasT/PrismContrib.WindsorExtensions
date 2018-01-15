@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
-using Microsoft.Practices.ServiceLocation;
 using Castle.Windsor;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
+using CommonServiceLocator;
 //using CommonServiceLocator.WindsorAdapter;
 using CommonServiceLocator.WindsorAdapter.Unofficial;
 

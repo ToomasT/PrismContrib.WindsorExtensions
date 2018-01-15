@@ -128,7 +128,7 @@ namespace PrismContrib.WindsorExtensions.Tests
             bootstrapper.CallRegisterFrameworkExceptionTypes();
 
             Assert.IsTrue(ExceptionExtensions.IsFrameworkExceptionRegistered(
-                typeof(Microsoft.Practices.ServiceLocation.ActivationException)));
+                typeof(CommonServiceLocator.ActivationException)));
         }
 
         [TestMethod]
