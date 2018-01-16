@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using PrismContrib.WindsorExtensions.Tests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Castle.Windsor;
+using Microsoft.Practices.ServiceLocation;
 
 namespace PrismContrib.WindsorExtensions.Tests
 {
@@ -128,7 +129,7 @@ namespace PrismContrib.WindsorExtensions.Tests
             bootstrapper.CallRegisterFrameworkExceptionTypes();
 
             Assert.IsTrue(ExceptionExtensions.IsFrameworkExceptionRegistered(
-                typeof(CommonServiceLocator.ActivationException)));
+                typeof(ActivationException)));
         }
 
         [TestMethod]
