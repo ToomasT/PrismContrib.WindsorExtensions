@@ -7,6 +7,7 @@ using PrismContrib.WindsorExtensions.Tests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Castle.Windsor;
 using CommonServiceLocator;
+using Prism.Ioc;
 
 namespace PrismContrib.WindsorExtensions.Tests
 {
@@ -269,5 +270,6 @@ namespace PrismContrib.WindsorExtensions.Tests
         {
             base.RegisterFrameworkExceptionTypes();
         }
+
     }
 }
