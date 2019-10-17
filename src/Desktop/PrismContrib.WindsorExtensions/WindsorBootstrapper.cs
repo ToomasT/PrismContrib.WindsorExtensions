@@ -5,6 +5,7 @@ using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
 using CommonServiceLocator.WindsorAdapter;
 using CommonServiceLocator;
+using Prism.Ioc;
 
 namespace PrismContrib.WindsorExtensions
 {
@@ -68,6 +69,8 @@ namespace PrismContrib.WindsorExtensions
             {
                 throw new InvalidOperationException(Resources.NullUnityContainerException);
             }
+
+            ContainerExtension = CreateContainerExtension();
 
             this.Logger.Log(Resources.ConfiguringUnityContainer, Category.Debug, Priority.Low);
             this.ConfigureContainer();
@@ -133,6 +136,7 @@ namespace PrismContrib.WindsorExtensions
         /// </summary>
         protected virtual void ConfigureContainer()
         {
+            Container.Register(Component.For<IContainerExtension>().Instance(ContainerExtension));
             Container.Register(Component.For<ILoggerFacade>().Instance(Logger));
 
             Container.Register(Component.For<IModuleCatalog>().Instance(ModuleCatalog));
@@ -194,6 +198,11 @@ namespace PrismContrib.WindsorExtensions
         protected virtual IWindsorContainer CreateContainer()
         {
             return new WindsorContainer();
+        }
+
+        protected override IContainerExtension CreateContainerExtension()
+        {
+            return new WindsorContainerExtension(Container);
         }
 
         /// <summary>
