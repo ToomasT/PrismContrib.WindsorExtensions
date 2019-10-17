@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using PrismContrib.WindsorExtensions.Tests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Castle.Windsor;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 
 namespace PrismContrib.WindsorExtensions.Tests
 {
